@@ -1,0 +1,32 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+  <%= link_to "conduit", root_path, class: "navbar-brand", id: "logo" %>
+    <ul class="nav navbar-nav pull-xs-right">
+      <li class="nav-item">
+        <%= link_to "Articles", root_path%>
+      </li>
+      <li class="nav-item">
+      <%= link_to "People", users_path%>
+      </li>
+      
+      <li class="nav-item">
+      <% if logged_in? %>
+          <li><%= link_to "Users", '#' %></li>
+        <a class="nav-link" href="/login">Sign in</a>
+      </li>
+
+      <%= link_to "Log out", logout_path,
+                                       data: { "turbo-method": :delete } %>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Sign up</a>
+      </li>
+
+      <% else %>
+
+      <li class="nav-item">
+      <%= link_to "Log in", login_path%>
+      </li>
+        <% end %>
+    </ul>
+  </div>
+</nav>

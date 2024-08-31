@@ -1,1 +1,58 @@
-<h1>おは</h1>
+
+<nav class="navbar navbar-light">
+  <div class="container">
+    <ul class="nav navbar-nav pull-xs-right">
+      <li class="nav-item">
+        <!-- Add "active" class when you're on that page" -->
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="articles/new"> <i class="ion-compose"></i>&nbsp;New Article </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/1">
+          <img src="" class="user-pic" />
+         user name
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="home-page">
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font">conduit</h1>
+      <p>A place to share your knowledge.</p>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-9">
+        <% @articles.each do |article| %>
+        <div class="article-preview">
+          <%= link_to article_path(article), class: "article-meta" do %>
+            <%= image_tag  "icon_#{article.user.id}.png" %>
+            <div class="info">
+              <div class="author"><%= article.user.name  %></div>
+              <span class="date"><%= article.created_at.strftime("%B %d, %Y")  %></span>
+            </div>
+            <div class="preview-link"> <br>
+            <h1><%= article.title %></h1>
+            <p><%= article.subtitle %></p>
+            <span>Read more...</span>
+            <ul class="tag-list">
+              <li class="tag-default tag-pill tag-outline">realworld</li>
+              <li class="tag-default tag-pill tag-outline">implementations</li>
+              </ul>
+            </div> 
+          <% end %>
+        </div>
+       <% end %> 
+
+
+    </div>
+  </div>
+</div>
+
+
