@@ -1,0 +1,75 @@
+<div class="profile-page">
+  <div class="user-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+          <%= image_tag  "icon_#{@user.id}.png", class: "user-img" %>
+          <h4><%= @user.name %></h4>
+          <p>
+            <%= @user.email %><br>
+          </p>
+          <button class="btn btn-sm btn-outline-danger">
+            <i class="ion-plus-round"></i>
+          <%= link_to "Delete", root_path, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"}%>
+          </button>
+          <button class="btn btn-sm btn-outline-secondary action-btn">
+            <i class="ion-gear-a"></i>
+            <%= link_to "Edit Profile Settings", edit_user_path %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 offset-md-1">
+        <div class="articles-toggle">
+
+          <%
+=begin%>
+ <% if user == current_user %>
+  <p>これはあなたのプロフィールです。</p>
+  <%= link_to 'プロフィールを編集する', edit_user_path(current_use) %>
+<% else %>
+<% end %> 
+<%
+=end%>
+  <p>これは<%= @user.name %>さんのプロフィールです。</p>
+
+        </div>
+
+        <%
+=begin%>
+ <div class="article-preview">
+          <div class="article-meta">
+            <a href="/profile/eric-simons"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
+            <div class="info">
+              <a href="/profile/eric-simons" class="author">Eric Simons</a>
+              <span class="date">January 20th</span>
+            </div>
+            <button class="btn btn-outline-primary btn-sm pull-xs-right">
+              <i class="ion-heart"></i> 29
+            </button>
+          </div>
+          <a href="/article/how-to-buil-webapps-that-scale" class="preview-link">
+            <h1>How to build webapps that scale</h1>
+            <p>This is the description for the post.</p>
+            <span>Read more...</span>
+            <ul class="tag-list">
+              <li class="tag-default tag-pill tag-outline">realworld</li>
+              <li class="tag-default tag-pill tag-outline">implementations</li>
+            </ul>
+          </a>
+        </div> 
+<%
+=end%>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+<%= link_to "Back to Top", root_path, class:"btn btn-lg pull-xs-right btn-primary" %>
+</div>

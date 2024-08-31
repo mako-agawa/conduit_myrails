@@ -1,0 +1,28 @@
+
+ <div class="home-page">
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font">conduit</h1>
+      <p>A place to share your knowledge.</p>
+    </div>
+  </div>
+ <div class="container page">
+    <div class="row">
+      <div class="col-md-9">
+        <% @users.each do |user| %>
+        <div class="article-preview">
+          <div class="article-meta">
+            <%= link_to user_path(user) do %>
+               <%= image_tag "icon_#{user.id}.png" %>
+              <div class="info">
+                <div class="author"><%= user.name  %></div>
+                 <span class="date"><%= user.created_at  %></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+       <% end %> 
+
+
+    </div>
+  </div>

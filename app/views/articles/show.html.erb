@@ -1,0 +1,51 @@
+<div class="article-page">
+  <div class="banner">
+    <div class="container">
+      <h1><%= @article.title %></h1>
+
+      <div class="article-meta">
+        <a href="#"><%= image_tag  "icon_#{@article.user.id}.png" %></a>
+        <div class="info">
+          <a href="/profile/eric-simons" class="author"><%= @article.user.name%></a>
+          <span class="date"><%= @article.created_at  %></span>
+        </div>
+    
+
+        <button class="btn btn-sm btn-outline-secondary">
+          <i class="ion-edit"></i> 
+          <%= link_to "Edit Article", edit_article_path(@article) %>
+        </button>
+        <%= button_to "Delete Article", article_path(@article), 
+          method: :delete,
+          data: {
+                    turbo_confirm: "Are you sure?"
+                    },
+          class: "btn btn-sm btn-outline-danger" %>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row article-content">
+      <div class="col-md-12">
+        <h2 id="introducing-ionic"><%= @article.subtitle %></h2>
+        <p><%= @article.body %></p>
+        <ul class="tag-list">
+          <li class="tag-default tag-pill tag-outline"><%= @article.tag %></li>
+          <li class="tag-default tag-pill tag-outline">realworld</li>
+          <li class="tag-default tag-pill tag-outline">implementations</li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+
+
+
+         <%= link_to "Back to Top", root_path, class:"btn btn-lg pull-xs-right btn-primary" %>
+
+    </div>
+  </div>
+</div>
