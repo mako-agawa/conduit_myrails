@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "sessions/new"
+
   # Root path to index action
   root "articles#index"
 
@@ -21,4 +21,3 @@ Rails.application.routes.draw do
   resources :articles
 
 end
-
