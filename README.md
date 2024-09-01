@@ -6,8 +6,11 @@
 
 ### 2.Articleには投稿者の情報を紐付けて管理しています。
 
-### 3.ArticleのCRUD処理とは別にUserデータのCRUD処理も実装しました。
+### 3.ArticleのCRUD処理は実装できました。
 
+### ※UserのCRUD処理も実装しました。Deleteだけ上手く機能せず登録ユーザーが残ってしまいます。
+
+### ※Current_userの機能も実装しましたが、ログインができてログアウトができない状態です。
 
 
 ## Things you may want to cover:
