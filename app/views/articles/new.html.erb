@@ -21,10 +21,14 @@
         <span class="tag-default tag-pill"> <i class="ion-close-round"></i> tag </span>
         </div>
     </div> 
-       <div  class="form-group">
+       <%
+=begin%>
+ <div  class="form-group">
         <%= form.text_field :user_id, class: "form-control", placeholder:"input user_id" %>
   
-    </div>           
+    </div>            
+<%
+=end%>
 
 
         <%= form.submit class: "btn  btn-lg pull-xs-right btn-primary", style:"border: none;" %>

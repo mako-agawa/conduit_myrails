@@ -4,9 +4,6 @@ class ArticlesController < ApplicationController
   # before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    puts "=========index========="
-    puts
-    # puts @current_user
     @articles = Article.all
   end
 
@@ -16,18 +13,11 @@ class ArticlesController < ApplicationController
 
   def new
 
-    # @article = @current_user.articles.build
-
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
   def create
-    # puts "aaaaaa"
-    # puts article_params
-    # puts @current_user
-    # @article = @current_user.articles.build(article_params)
-
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.save
       redirect_to @article
@@ -62,7 +52,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :subtitle, :body, :tag, :user_id)
+    params.require(:article).permit(:title, :subtitle, :body, :tag)
   end
 
 end
