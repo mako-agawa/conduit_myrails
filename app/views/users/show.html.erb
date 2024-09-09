@@ -8,12 +8,8 @@
           <p>
             <%= @user.email %><br>
           </p>
-          <button class="btn btn-sm btn-outline-danger">
-            <i class="ion-plus-round"></i>
-          <%= link_to "Delete", root_path, data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"}%>
-          </button>
+          
+          <%= button_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class:"ion-plus-round btn btn-sm btn-outline-danger"%>
           <button class="btn btn-sm btn-outline-secondary action-btn">
             <i class="ion-gear-a"></i>
             <%= link_to "Edit Profile Settings", edit_user_path %>

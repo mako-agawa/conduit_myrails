@@ -5,12 +5,12 @@
       <li class="nav-item">
         <!-- Add "active" class when you're on that page" -->
 
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="articles/new"> <i class="ion-compose"></i>&nbsp;New Article </a>
-      </li>
         <% if logged_in? %>
-  <!-- ログイン中のユーザーには、ユーザーアイコンとログアウトリンクを表示 -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="articles/new"> <i class="ion-compose"></i>&nbsp;New Article </a>
+          </li>
+      <!-- ログイン中のユーザーには、ユーザーアイコンとログアウトリンクを表示 -->
           <li class="nav-item border: 1px solid green" >
               <%= image_tag "icon_#{current_user.id}.png", class:"user-pic", style: "width:48px; height: 48px;"%>
               <%= current_user.name %>
