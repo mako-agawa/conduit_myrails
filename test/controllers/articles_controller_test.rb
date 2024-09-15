@@ -1,5 +1,5 @@
 class ArticleControllerTest < ActionDispatch::IntegrationTest
-  # テスト用ユーザーと記事をセットアップ
+    # テスト用ユーザーと記事をセットアップ
     setup do
       # テスト用のユーザーと記事を作成
       @user = User.create!(name: "Test User", email: "user@example.com", password: "password", password_confirmation: "password")
@@ -26,14 +26,14 @@ class ArticleControllerTest < ActionDispatch::IntegrationTest
     end
 
     test "should create article with valid parameters" do
-      assert_difference('Article.count') do
+      assert_difference("Article.count") do
         post articles_url, params: { article: { title: "New Article", body: "This is a new article body.", user_id: @user.id } }
       end
       assert_redirected_to article_path(Article.last)
     end
 
     test "should not create article with invalid parameters" do
-      assert_no_difference('Article.count') do
+      assert_no_difference("Article.count") do
         post articles_url, params: { article: { title: "", body: "", user_id: @user.id } }
       end
       assert_response :unprocessable_entity
@@ -58,7 +58,7 @@ class ArticleControllerTest < ActionDispatch::IntegrationTest
     end
 
     test "should destroy article" do
-      assert_difference('Article.count', -1) do
+      assert_difference("Article.count", -1) do
         delete article_url(@article)
       end
       assert_redirected_to articles_url

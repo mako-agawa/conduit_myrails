@@ -1,10 +1,8 @@
-require 'test_helper'
+require "test_helper"
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = User.create!(name: "Test User", email: "user@example.com", password: "password", password_confirmation: "password")
-
-
   end
 
   test "should get login" do
@@ -39,10 +37,10 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should not log in with invalid information" do
     # 無効な情報でログインを試みる
-    post login_path, params: { session: { email: @user.email, password: 'wrong_password' } }
+    post login_path, params: { session: { email: @user.email, password: "wrong_password" } }
 
     # 再度ログインページが表示されるか確認
-    assert_template 'sessions/new'
+    assert_template "sessions/new"
 
     # フラッシュメッセージが表示されているか確認
     assert_not flash.empty?
@@ -53,7 +51,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     puts @user.id  # IDを確認
     puts "========="  # IDを確認
     # ログインしてからログアウトを確認
-    post login_path, params: { session: { email: @user.email, password: 'password' } }
+    post login_path, params: { session: { email: @user.email, password: "password" } }
     assert is_logged_in?
 
     delete logout_path
