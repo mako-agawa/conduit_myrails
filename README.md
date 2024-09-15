@@ -13,7 +13,8 @@
 
 ## Real World でテストをしてみた!!
 ### step1:
-   •	ユーザーログインが成功するかを確認。
+	•	記事一覧(indexアクションが成功するか確認)
+	[articles_controller_test.rb](./test/controllers/articles_controller_test.rb)
 ### step2:
   
 	•	ユーザーログインが成功するかを確認。
