@@ -1,52 +1,34 @@
 # README
 
-## Real Worldのドキュメントをもとに記事を投稿サイトを作成しました。
+## 前回までの Real World
 
-### 1.Home(root_path)はArticleの一覧が表示されるように設定しました。
+1.Home(root_path)はArticleの一覧が表示されるように設定しました。<br>
+2.Articleには投稿者の情報を紐付けて管理しています。<br>
+3.ArticleのCRUD処理は実装できました。<br>
 
-### 2.Articleには投稿者の情報を紐付けて管理しています。
+~~UserのCRUD処理も実装しました。Deleteだけ上手く機能せず登録ユーザーが残ってしまいます。~~<br>
+~~Current_userの機能も実装しましたが、ログインができてログアウトができない状態です。~~<br>
+<br>
+**4.link_toタグをbutton_toに書き換えることで無事解決。ユーザーのログアウトもできるようになりました**
 
-### 3.ArticleのCRUD処理は実装できました。
+## Real World でテストをしてみた!!
+### step1:
+	•	記事一覧(indexアクションが成功するか確認)
+	[articles_controller_test.rb](./test/controllers/articles_controller_test.rb)
+### step2:
+  
+	•	ユーザーログインが成功するかを確認。
+	•	タイトルとボディが正しい場合、記事が有効かをテスト。
+	•	タイトルがない場合に無効であることを確認。
+	•	ボディがない場合に無効であることを確認。
+	•	ボディが10文字未満の場合に無効であることを確認。
+	•	indexアクションが成功することを確認。
+	•	showアクションが成功することを確認。
+	•	有効なパラメータで記事を作成できるかを確認。
+	•	無効なパラメータで記事を作成できないことを確認。
+	•	有効なパラメータで記事を更新できるかを確認。
+	•	無効なパラメータで記事を更新できないことを確認。
+	•	記事が正常に削除されるかを確認。
+	•	ユーザーログアウトが成功するかを確認。
 
-### ※UserのCRUD処理も実装しました。Deleteだけ上手く機能せず登録ユーザーが残ってしまいます。
-
-### ※Current_userの機能も実装しましたが、ログインができてログアウトができない状態です。
-
-
-## Things you may want to cover:
-
-* Ruby version　3.2.4
-    
-* System dependencies
-
-source "https://rubygems.org"
-gem "rails", "~> 7.2.1"
-gem "sprockets-rails"
-gem "sqlite3", ">= 1.4"
-gem "puma", ">= 5.0"
-gem "importmap-rails"
-gem "turbo-rails"
-gem "stimulus-rails"
-gem "jbuilder"
-gem 'rubocop'
-gem "bcrypt", "~> 3.1.7"
-gem "tzinfo-data"
-gem "bootsnap"
-  gem "debug"
-  gem "brakeman", require: false
-  gem "rubocop-rails-omakase"
-  gem "web-console"
-
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+### step3
