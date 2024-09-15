@@ -34,5 +34,5 @@
 
 ### step3
 上記のSTEP2の項目をtest.rbに記述<br>
-[articles_controller_test](/test/controllers/articles_controller_test.rb)
+[articles_controller_test](/test/controllers/articles_controller_test.rb) <br>
 [sessions_controller_test](/test/controllers/sessions_controller_test.rb)
