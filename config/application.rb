@@ -38,5 +38,7 @@ module MyConduitRails
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    # APIモードを有効にする
+    config.api_only = true
   end
 end
