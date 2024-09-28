@@ -14,7 +14,10 @@
 5.テストコードを作成なぜだか、セッションコントローラーのテストだけログインIDが一致しない事象が発生するも及第点。
 
 ## APIを実装してみた
+今回の主な変更点は以下のファイルとなります。
 
-[articles_controller.rb](app/controllers/api/v1/articles_controller.rb)
+- [routes.rb](config/routes.rb)
+- [articles_controller.rb](app/controllers/api/v1/articles_controller.rb)
+- [cors.rb](config/initializers/cors.rb)
 
 
