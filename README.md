@@ -15,6 +15,6 @@
 
 ## APIを実装してみた
 
-
+[articles_controller.rb](app/controllers/api/v1/articles_controller.rb)
 
 
